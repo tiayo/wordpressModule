@@ -6,13 +6,13 @@ class Export
 {
     public function csv($data, $filename = null, $remark = null)
     {
-        $str = "order number, SKU, quantity, name, address, city, state, zip code, country, phone number\n";
+        $str = "order number, SKU, product name, quantity, name, address, city, state, zip code, country, phone number\n";
         $data = $remark == 'one' ? array(0 => $data):$data;
         foreach ($data as $data_row) {
-            foreach ($data_row as $num=>$row){
-                $str_item = null;
-                $str .=  '"'.$row['id']."_".($num+1).'"'.','.
+            foreach ($data_row as $row){
+                $str .=  '"'.$row['id'].'"'.','.
                          '"'.$row['SKU'].'"'.','.
+                         '"'.$row['product_name'].'"'.','.
                          '"'.$row['quantity'].'"'.','.
                          '"'.$row['name'].'"'.','.
                          '"'.$row['address'].'"'.','.

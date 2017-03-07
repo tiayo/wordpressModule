@@ -53,6 +53,7 @@ class handle{
             $line_items_result[] = array(
                 'id' => $result['ID'],
                 'SKU' => $this->oderMeta($product_id, '_sku'),
+                'product_name' => $row['order_item_name'],
                 'quantity' => $this->oderItemMeta($order_item_id, '_qty'),
                 'name' => $order_meta_array['_shipping_first_name'].' '.$order_meta_array['_shipping_last_name'],
                 'address' => $order_meta_array['_shipping_address_1'].' '.$order_meta_array['_shipping_address_2'],
@@ -70,26 +71,24 @@ class handle{
     {
         if ($meta_key != null) {
             return (string)$this -> meta
-                                 -> select('meta_value')
-                                 -> where('post_id', $id)
-                                 -> where('meta_key', $meta_key)
-                                 -> first()['meta_value'];
-        } else {
-            return $this -> meta
-                         -> select('meta_key', 'meta_value')
-                         -> where('post_id', $id)
-                         -> get();
+                -> select('meta_value')
+                -> where('post_id', $id)
+                -> where('meta_key', $meta_key)
+                -> first()['meta_value'];
         }
-
+        return $this -> meta
+            -> select('meta_key', 'meta_value')
+            -> where('post_id', $id)
+            -> get();
     }
 
     public function oderItemMeta($id, $meta_key)
     {
         return (string)$this -> order_item_meta
-                                 -> select('meta_value')
-                                 -> where('order_item_id', $id)
-                                 -> where('meta_key', $meta_key)
-                                 -> first()['meta_value'];
+            -> select('meta_value')
+            -> where('order_item_id', $id)
+            -> where('meta_key', $meta_key)
+            -> first()['meta_value'];
     }
 
 }
