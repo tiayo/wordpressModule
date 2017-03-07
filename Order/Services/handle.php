@@ -55,13 +55,15 @@ class handle{
                 'SKU' => $this->oderMeta($product_id, '_sku'),
                 'product_name' => $row['order_item_name'],
                 'quantity' => $this->oderItemMeta($order_item_id, '_qty'),
-                'name' => $order_meta_array['_shipping_first_name'].' '.$order_meta_array['_shipping_last_name'],
+                'first_name' => $order_meta_array['_shipping_first_name'],
+                'last_name' => $order_meta_array['_shipping_last_name'],
                 'address' => $order_meta_array['_shipping_address_1'].' '.$order_meta_array['_shipping_address_2'],
                 'city' => $order_meta_array['_shipping_city'],
                 'state' => $order_meta_array['_shipping_state'],
                 'zip_code' => $order_meta_array['_shipping_postcode'],
                 'country' => $order_meta_array['_shipping_country'],
                 'phone_number' => $order_meta_array['_billing_phone'],
+                'email' => $order_meta_array['_billing_email'],
                 );
         }
         return $line_items_result;
