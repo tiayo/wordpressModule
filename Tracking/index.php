@@ -52,15 +52,5 @@ function wp_Traking_io_page_html()
             <input type="submit" class="button button-primary button-large" value="Confirm import">
         </form>
     </div>
-    <script>
-        window.onload = function () {
-            flatpickr("#range", {
-                "mode": "range",
-                enableTime: true,
-                altInput: true,
-                altFormat: "Y-m-d H:i:S"
-            });
-        }
-    </script>
     <?php
 }

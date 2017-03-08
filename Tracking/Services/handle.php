@@ -60,7 +60,7 @@ class handle
                     $status = false;
                 }
 
-                //insert
+                //Non-existent,insert
                 if($status == false) {
                     $this->meta
                         ->create([
@@ -70,7 +70,7 @@ class handle
                         ]);
                 }
 
-                //update
+                //existent,update
                 if($status == true) {
                     $this->meta
                         ->where('post_id', $row['Order ID'])
