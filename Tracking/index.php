@@ -32,10 +32,10 @@ function wporg_Traking_page()
 {
     // add top level menu page
     add_menu_page(
-        'WP-Traking-IO',
-        'WP-Traking-IO',
+        'Traking_import',
+        'Traking_import',
         'manage_options',
-        'wp_Traking_io',
+        'Traking_import',
         'wp_Traking_io_page_html'
     );
 }
@@ -44,7 +44,7 @@ function wp_Traking_io_page_html()
 {
     ?>
     <div class="container">
-        <h2 class="form-signin-heading">Import tracking number</h2>
+        <h1><?= esc_html(get_admin_page_title()); ?></h1>
         <form enctype="multipart/form-data" action="<?php echo admin_url('admin.php'); ?>" method="post">
             <input type="hidden" name="page" value="traking">
             <input type="file" name="file" placeholder="Select Date..">
