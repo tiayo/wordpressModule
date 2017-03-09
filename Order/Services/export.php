@@ -6,24 +6,26 @@ class Export
 {
     public function csv($data, $filename = null, $remark = null)
     {
-        $str = "order number, SKU, product name, quantity, first name, last name, address, city, state, zip code, country, phone number, E-mail\n";
+        $str = "Order Number, SKU, Product Name, Quantity, First Name, Last Name, Address, City, State, Zip Code, Country, Phone Number, Email\n";
         $data = $remark == 'one' ? array(0 => $data):$data;
         foreach ($data as $data_row) {
-            foreach ($data_row as $row){
-                $str .=  '"'.$row['id'].'"'.','.
-                         '"'.$row['SKU'].'"'.','.
-                         '"'.$row['product_name'].'"'.','.
-                         '"'.$row['quantity'].'"'.','.
-                         '"'.$row['first_name'].'"'.','.
-                         '"'.$row['last_name'].'"'.','.
-                         '"'.$row['address'].'"'.','.
-                         '"'.$row['city'].'"'.','.
-                         '"'.$row['state'].'"'.','.
-                         '"'.$row['zip_code'].'"'.','.
-                         '"'.$row['country'].'"'.','.
-                         '"'.$row['phone_number'].'"'.','.
-                         '"'.$row['email'].'"'.','
-                         ."\r\n";
+            if (is_array($data_row) || is_object($data_row)) {
+                foreach ($data_row as $key => $row) {
+                    $str .= '"' . $row['id'] . '"' . ',' .
+                        '"' . $row['SKU'] . '"' . ',' .
+                        '"' . $row['product_name'] . '"' . ',' .
+                        '"' . $row['quantity'] . '"' . ',' .
+                        '"' . $row['first_name'] . '"' . ',' .
+                        '"' . $row['last_name'] . '"' . ',' .
+                        '"' . $row['address'] . '"' . ',' .
+                        '"' . $row['city'] . '"' . ',' .
+                        '"' . $row['state'] . '"' . ',' .
+                        '"' . $row['zip_code'] . '"' . ',' .
+                        '"' . $row['country'] . '"' . ',' .
+                        '"' . $row['phone_number'] . '"' . ',' .
+                        '"' . $row['email'] . '"' . ','
+                        . "\r\n";
+                }
             }
         }
         $filename = $filename == null ? date('Ymd').'.csv' : $filename.'.csv';

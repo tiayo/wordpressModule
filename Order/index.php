@@ -54,10 +54,10 @@ function wporg_order_page()
 {
     // add top level menu page
     add_menu_page(
-        'WP-ORDER-IO',
-        'WP-ORDER-IO',
+        'Order_export',
+        'Order_export',
         'manage_options',
-        'wp_order_io',
+        'Order_export',
         'wp_order_io_page_html'
     );
 }
@@ -90,7 +90,7 @@ function wp_order_io_page_html()
         }
     </style>
     <div class="container">
-        <h2 class="form-signin-heading">Export all orders</h2>
+        <h1><?= esc_html(get_admin_page_title()); ?></h1>
         <a href="<?php echo admin_url('admin.php?page=order_export&order=all'); ?>"><input class="button button-primary button-large" type="button" value="Export all orders"></a>
     </div>
 

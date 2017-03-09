@@ -5,6 +5,7 @@ namespace Order\conf;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 require_once(__DIR__.'/../../../../vendor/autoload.php' );
+require_once (__DIR__.'/../../../../wp-config.php');
 
 $capsule = new Capsule;
 /*
@@ -12,12 +13,12 @@ $capsule = new Capsule;
  * */
 $capsule->addConnection([
     'driver'    => 'mysql',
-    'host'      => '192.168.33.10',
-    'database'  => 'wordpress',
-    'username'  => 'root',
-    'password'  => '123456',
-    'charset'   => 'utf8',
-    'collation' => 'utf8_unicode_ci',
+    'host'      => constant('DB_HOST'),
+    'database'  => constant('DB_NAME'),
+    'username'  => constant('DB_USER'),
+    'password'  => constant('DB_PASSWORD'),
+    'charset'   => constant('DB_CHARSET'),
+    'collation' => empty(constant('DB_COLLATE')) ? 'utf8mb4_general_ci':constant('DB_COLLATE'),
     'prefix'    => '',
 ], 'mysql');
 // Set the event dispatcher used by Eloquent models... (optional)
