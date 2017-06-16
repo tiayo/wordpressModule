@@ -1,0 +1,17 @@
+{
+    "require": {
+        "illuminate/database": "^5.4",
+        "illuminate/events": "^5.4",
+	    "league/csv": "^8.2",
+        "rmccue/Requests": "^1.7"
+    },
+
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "Foru\\": "src/"
+        }
+    }
+}

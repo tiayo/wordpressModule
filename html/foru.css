@@ -1,0 +1,134 @@
+input.flatpickr{
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0 .5rem;
+    height: 40px;
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    border-radius: 2px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.9);
+    width:28%;
+    display: block;
+    transition: all 200ms ease-out;
+    cursor: pointer;
+}
+input.flatpickr.active{
+    outline: 0;
+    background: #fff;
+    border: 1px solid rgba(50,115,220,0.7);
+}
+.container{
+    width: 90%;
+    float: left;
+    border: 1px solid #DDD;
+    border-radius:5px;
+    margin: 1em 0 1em 0;
+    padding: 1em;
+    background: #fff;
+}
+.container p{
+    line-height:1em;
+    margin:1em 0 0 0;
+    padding: 0;
+    float: left;
+}
+.bgc{
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+}
+.float{
+    width: 30%;
+    float: left;
+    background:#fff;
+    position: fixed;
+    padding: 1em;
+    top:0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin:15% 0 0 25%;
+}
+.bgc_close{
+    float: right;
+}
+.progress {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    font-size: .75rem;
+    line-height: 1rem;
+    text-align: center;
+    background-color: #eceeef;
+    border-radius: .25rem;
+    webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+.progress-bar {
+    height: 1rem;
+    color: #fff;
+    background-color: #0275d8;
+}
+h2{
+    font-size:25px;
+    font-family: "Ubuntu Condensed",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    line-height: 1.1;
+    color: inherit;
+}
+.label-info{
+    font-size: 12px;
+    font-weight: 400;
+    background-color: #25b9d7;
+    display: inline;
+    padding: 0.15em 0.4em;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+.label-success{
+    font-size: 12px;
+    font-weight: 400;
+    background-color: #72C279;
+    display: inline;
+    padding: 0.15em 0.4em;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+
+#create_token_form{
+    width: 100%;
+    float: left;
+}
+
+#create_token_form label{
+    width: 100%;
+    font-size: 15px;
+    float: left;
+    margin: 0.5em 0 0.5em 0;
+}
+
+#create_token_form input{
+    width: 37%;
+    float: left;
+    height: 2.5em;
+}
+
+.create_token_form_div{
+    width: 100%;
+    float: left;
+    margin: 1em 0 1em 0;
+}
